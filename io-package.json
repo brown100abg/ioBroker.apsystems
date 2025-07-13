@@ -1,0 +1,115 @@
+{
+    "common": {
+        "name": "apsystems",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "uk": "Початкова версія",
+                "zh-cn": "首次出版"
+            }
+        },
+        "titleLang": {
+            "en": "AP Systems EZ1",
+            "de": "AP -Systeme EZ1",
+            "ru": "AP Systems EZ1",
+            "pt": "Sistemas AP EZ1",
+            "nl": "AP -systemen EZ1",
+            "fr": "Systèmes AP EZ1",
+            "it": "Sistemi AP EZ1",
+            "es": "Sistemas AP EZ1",
+            "pl": "Systemy AP EZ1",
+            "uk": "Системи AP EZ1",
+            "zh-cn": "AP系统EZ1"
+        },
+        "desc": {
+            "en": "Adapter for APsystems EZ1 M microinverter",
+            "de": "Adapter für Apsystems EZ1 M Mikroinverter",
+            "ru": "Адаптер для Apsystems EZ1 M Microinverter",
+            "pt": "Adaptador para Apsystems EZ1 M Microinverter",
+            "nl": "Adapter voor apsystems EZ1 M Microinverter",
+            "fr": "Adaptateur pour APSystems EZ1 M Microinverter",
+            "it": "Adattatore per Apsystems EZ1 M Microinverter",
+            "es": "Adaptador para Apsystems EZ1 M Microinverter",
+            "pl": "Adapter dla Apsystems EZ1 M Microinverter",
+            "uk": "Адаптер для апсистем ez1 m мікроінвертор",
+            "zh-cn": "APSYSTEMS EZ1 M微电器的适配器"
+        },
+        "authors": [
+            "Andreas <andreas-braeunig@gmx.de>"
+        ],
+        "keywords": [
+            "APsystems",
+            "Solar",
+            "Microinverter",
+            "EZ1",
+            "Energy",
+            "IoT"
+        ],
+        "licenseInformation": {
+            "type": "free",
+            "license": "MIT"
+        },
+        "platform": "Javascript/Node.js",
+        "icon": "apsystems.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/brown100abg/ioBroker.apsystems/main/admin/apsystems.png",
+        "readme": "https://github.com/brown100abg/ioBroker.apsystems/blob/main/README.md",
+        "loglevel": "info",
+        "tier": 3,
+        "mode": "daemon",
+        "type": "energy",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "adminUI": {
+            "config": "materialize"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=6.0.11"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=7.0.23"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}

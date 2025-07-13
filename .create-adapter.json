@@ -1,0 +1,47 @@
+{
+    "cli": true,
+    "target": "directory",
+    "adapterName": "apsystems",
+    "title": "AP Systems EZ1",
+    "description": "Adapter for APsystems EZ1 M microinverter",
+    "keywords": [
+        "APsystems",
+        "Solar",
+        "Microinverter",
+        "EZ1",
+        "Energy",
+        "IoT"
+    ],
+    "expert": "yes",
+    "features": [
+        "adapter"
+    ],
+    "adminFeatures": [],
+    "type": "energy",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "poll",
+    "connectionIndicator": "yes",
+    "language": "JavaScript",
+    "nodeVersion": "18",
+    "adminUi": "html",
+    "tools": [
+        "ESLint",
+        "type checking"
+    ],
+    "i18n": "JSON",
+    "releaseScript": "yes",
+    "devServer": "yes",
+    "devServerPort": 8081,
+    "indentation": "Space (4)",
+    "quotes": "single",
+    "authorName": "Andreas",
+    "authorGithub": "brown100abg",
+    "authorEmail": "andreas-braeunig@gmx.de",
+    "gitRemoteProtocol": "HTTPS",
+    "gitCommit": "yes",
+    "defaultBranch": "main",
+    "license": "MIT License",
+    "dependabot": "yes",
+    "creatorVersion": "2.6.5"
+}
