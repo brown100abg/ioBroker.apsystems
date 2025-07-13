@@ -21,7 +21,7 @@
     "url": "https://github.com/brown100abg/ioBroker.apsystems.git"
   },
   "engines": {
-    "node": ">= 18"
+    "node": ">= 20"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.2.3"
