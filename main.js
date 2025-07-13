@@ -95,7 +95,7 @@ class Apsystems extends utils.Adapter {
             });
             resp.on('end', () => {
                 //this.log.info(JSON.parse(data).explanation);
-                this.setState('power.max',JSON.parse(data).data.maxPower,true);
+                this.setState('power.max',Number(JSON.parse(data).data.maxPower),true);
             });
         }).on('error', (err) => {
             this.log.info('Error:  ' + err.message);
