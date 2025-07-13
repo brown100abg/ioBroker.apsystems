@@ -1,5 +1,7 @@
 'use strict';
 
+import { Http2ServerRequest } from 'http2';
+
 /*
  * Created with @iobroker/create-adapter v2.6.5
  */
@@ -41,6 +43,15 @@ class Apsystems extends utils.Adapter {
         // this.config:
         this.log.info('config option1: ' + this.config.host);
         this.log.info('config option2: ' + this.config.port);
+
+
+        Http.get({hostname: 'localhost',
+                  port: 80,
+                  path: '/',
+                  agent: false,  // Create a new agent just for this one request
+        }, (res) => {
+            // Do stuff with response
+        }); 
 
         /*
         For every state in the system there has to be also an object of type state
