@@ -18,7 +18,8 @@ Adapter for APsystems EZ1 M microinverter
 This is a test adapter
 
 ## Changelog
-v0.0.1 
+0.0.1 (2025-07-13)
+- first
 
 ### **WORK IN PROGRESS**
 * (Andreas) initial release

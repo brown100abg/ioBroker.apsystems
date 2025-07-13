@@ -5,6 +5,7 @@
  * Created with @iobroker/create-adapter v2.6.5
  */
 
+
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
@@ -40,8 +41,8 @@ class Apsystems extends utils.Adapter {
 
         // The adapters config (in the instance object everything under the attribute "native") is accessible via
         // this.config:
-        this.log.info('config option1: ' + this.config.host);
-        this.log.info('config option2: ' + this.config.port);
+        this.log.info('config option1: ' + this.config.host + ':' + this.config.port);
+        //this.log.info('config option2: ' + this.config.port);
 
 
 
