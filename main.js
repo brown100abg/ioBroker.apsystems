@@ -12,6 +12,8 @@ const utils = require('@iobroker/adapter-core');
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
+const http  = require('node:http');
+//const https = require('https');
 
 class Apsystems extends utils.Adapter {
 
@@ -41,10 +43,8 @@ class Apsystems extends utils.Adapter {
 
         // The adapters config (in the instance object everything under the attribute "native") is accessible via
         // this.config:
-        this.log.info('config option1: ' + this.config.host + ':' + this.config.port);
+        this.log.info('config host and port: ' + this.config.host + ':' + this.config.port);
         //this.log.info('config option2: ' + this.config.port);
-
-
 
         /*
         For every state in the system there has to be also an object of type state
@@ -63,8 +63,47 @@ class Apsystems extends utils.Adapter {
             native: {},
         });
 
+        await this.setObjectNotExistsAsync('power.current', {
+            type: 'state',
+            common: {
+                name: 'current',
+                type: 'number',
+                role: 'indicator',
+                read: true,
+                write: false,
+            },
+            native: {},
+        });
+
+        await this.setObjectNotExistsAsync('power.max', {
+            type: 'state',
+            common: {
+                name: 'max',
+                type: 'number',
+                role: 'indicator',
+                read: true,
+                write: true,
+            },
+            native: {},
+        });
+
+
+        http.get('http://' + this.config.host + ':' + this.config.port + '/getDeviceInfo', (resp) => {
+            let data = '';
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+            resp.on('end', () => {
+                //this.log.info(JSON.parse(data).explanation);
+                this.setState('power.max',JSON.parse(data).data.maxPower,true);
+            });
+        }).on('error', (err) => {
+            this.log.info('Error:  ' + err.message);
+        });
+
         // In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
         this.subscribeStates('testVariable');
+        this.subscribeStates('power.max');
         // You can also add a subscription for multiple states. The following line watches all states starting with "lights."
         // this.subscribeStates('lights.*');
         // Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
@@ -164,7 +203,7 @@ class Apsystems extends utils.Adapter {
 
 }
 
-if (require.main !== module) {
+if (require.main !== module ) {
     // Export the constructor in compact mode
     /**
      * @param {Partial<utils.AdapterOptions>} [options={}]
