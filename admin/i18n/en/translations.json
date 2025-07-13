@@ -1,5 +1,5 @@
 {
     "apsystems adapter settings": "Adapter settings for apsystems",
-    "option1": "option1",
-    "option2": "option2"
+    "option1": "Host",
+    "option2": "Port"
 }

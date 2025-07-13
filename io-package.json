@@ -85,8 +85,8 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "host": "192.168.124.20",
+        "port": "8050"
     },
     "objects": [],
     "instanceObjects": [

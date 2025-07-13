@@ -23,9 +23,9 @@ systemDictionary = {
         'uk': 'Налаштування адаптера для apsystems',
         'zh-cn': 'apsystems的适配器设置'
     },
-    'option1': {
-        'en': 'option1',
-        'de': 'Option1',
+    'host': {
+        'en': 'Host',
+        'de': 'Host',
         'ru': 'вариант1',
         'pt': 'opção1',
         'nl': 'Option1',
@@ -36,9 +36,9 @@ systemDictionary = {
         'uk': 'Варіант1',
         'zh-cn': '选项1'
     },
-    'option2': {
-        'en': 'option2',
-        'de': 'Option2',
+    'port': {
+        'en': 'Port',
+        'de': 'Port',
         'ru': 'вариант2',
         'pt': 'opção2',
         'nl': 'Optie2',
