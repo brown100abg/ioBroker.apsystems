@@ -14,7 +14,8 @@
     "Microinverter",
     "EZ1",
     "Energy",
-    "IoT"
+    "IoT",
+    "ioBroker"
   ],
   "repository": {
     "type": "git",
